@@ -1,0 +1,30 @@
+{
+  "accountAssociation": {
+    "header": "",
+    "payload": "",
+    "signature": ""
+  },
+  "frame": {
+    "version": "1",
+    "name": "SolTippy",
+    "subtitle": "Built with Zara",
+    "description": "SolTippy is a Base Mini App built with Zara.",
+    "iconUrl": "https://0co.to/images/zara-2.png",
+    "homeUrl": "https://9d3fb077e93c493db633e9faa3a14468-a3ho.vercel.app",
+    "splashImageUrl": "https://9d3fb077e93c493db633e9faa3a14468-a3ho.vercel.app/splash.png",
+    "splashBackgroundColor": "#000000",
+    "heroImageUrl": "https://9d3fb077e93c493db633e9faa3a14468-a3ho.vercel.app/image.png",
+    "tagline": "SolTippy",
+    "screenshotUrls": [
+      "https://9d3fb077e93c493db633e9faa3a14468-a3ho.vercel.app/screenshot.png",
+      "https://9d3fb077e93c493db633e9faa3a14468-a3ho.vercel.app/screenshot.png"
+    ],
+    "primaryCategory": "social",
+    "tags": [
+      "base",
+      "miniapp",
+      "onchainkit"
+    ],
+    "webhookUrl": "https://9d3fb077e93c493db633e9faa3a14468-a3ho.vercel.app/api/webhook"
+  }
+}
