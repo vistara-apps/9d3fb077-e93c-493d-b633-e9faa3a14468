@@ -6,7 +6,7 @@ interface HeroSectionProps {
   onGetStarted: () => void;
 }
 
-export function HeroSection({ onGetStarted }: HeroSectionProps) {
+export default function HeroSection({ onGetStarted }: HeroSectionProps) {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center text-center space-y-8 px-4">
       {/* Hero Visual */}

@@ -1,25 +1,36 @@
 'use client';
 
 import { useState } from 'react';
-import { useMiniKit } from '@coinbase/minikit';
 import { ProfileHeader } from '../components/ProfileHeader';
 import { TipConfigForm } from '../components/TipConfigForm';
 import { TransactionHistory } from '../components/TransactionHistory';
 import { EngagementMetric } from '../components/EngagementMetric';
 import { PrimaryButton } from '../components/PrimaryButton';
-import { HeroSection } from '../components/HeroSection';
+import HeroSection from '../components/HeroSection';
+
+// Force dynamic rendering to avoid SSR issues with wagmi hooks
+export const dynamic = 'force-dynamic';
 
 export default function Home() {
-  const { context } = useMiniKit();
   const [activeTab, setActiveTab] = useState<'home' | 'config' | 'history'>('home');
   const [isConfigured, setIsConfigured] = useState(false);
+
+  // Mock user data for now - in a real Base Mini App, this would come from MiniKit context
+  const mockUser = {
+    displayName: 'Demo User',
+    username: 'demouser',
+    pfpUrl: undefined,
+    fid: 12345
+  };
 
   const handleConfigSave = () => {
     setIsConfigured(true);
     setActiveTab('home');
   };
 
-  if (!context?.user && activeTab === 'home') {
+  // For demo purposes, always show the main interface
+  // In a real app, you'd check if user is authenticated
+  if (activeTab === 'home' && !isConfigured) {
     return <HeroSection onGetStarted={() => setActiveTab('config')} />;
   }
 
@@ -62,7 +73,7 @@ export default function Home() {
       {/* Content */}
       {activeTab === 'home' && (
         <div className="space-y-6">
-          <ProfileHeader user={context?.user} />
+          <ProfileHeader user={mockUser} />
           
           {!isConfigured ? (
             <div className="card text-center space-y-4">
